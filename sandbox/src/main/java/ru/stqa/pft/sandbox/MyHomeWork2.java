@@ -11,7 +11,7 @@ public class MyHomeWork2 {
     Point p2 = new Point(-3,0);
 
     System.out.println("Расстояние между точкой А(" + p1.x + "; " + p1.y + ") " +
-            "и точкой В(" + p1.x + "; " + p1.y + ") = " + p1.distance(p2));
+            "и точкой В(" + p2.x + "; " + p2.y + ") = " + p1.distance(p2));
 
   }
 
