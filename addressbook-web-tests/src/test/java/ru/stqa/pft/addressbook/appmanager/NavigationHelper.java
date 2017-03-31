@@ -8,13 +8,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * Created by user on 3/24/2017.
  */
 public class NavigationHelper extends HelperBase {
-  private WebDriver wd;
 
   public NavigationHelper(WebDriver wd) {
     super(wd);
   }
 
   public void gotoGroupPage() {
+    if (isElementPresent(By.tagName("h1"))
+            && wd.findElement(By.tagName("h1")).getText().equals("Groups")
+            && isElementPresent(By.name("new"))) {
+      return;
+    }
     click(By.linkText("groups"));
   }
 
@@ -22,7 +26,11 @@ public class NavigationHelper extends HelperBase {
     click(By.linkText("add new"));
   }
 
-   public void gotoHomePage() {
-     click(By.linkText("home"));
-   }
+  public void gotoHomePage() {
+
+    if (isElementPresent(By.id("maintable"))) {
+      return;
+    }
+    click(By.linkText("home"));
+  }
 }
