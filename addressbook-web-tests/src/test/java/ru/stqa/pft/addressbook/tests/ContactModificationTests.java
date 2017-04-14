@@ -21,7 +21,7 @@ public class ContactModificationTests extends TestBase {
       app.getContactHelper().createContact(new ContactData("John", "Doe", "Green Street, LA, 30495", "1-208-555-1212", "johndoe@soup.com", "g2name"), true);
     }
     List<ContactData> before = app.getContactHelper().getContactList();
-    app.getContactHelper().initContactModification();
+    app.getContactHelper().initContactModification(before.size()-1);
     ContactData contact = new ContactData("John", "Doe", "Green Street, LA, 30495", "1-208-555-1212", "johndoe@soup.com", "g2name");
     app.getContactHelper().fillContactForm(contact, false);
     app.getContactHelper().submitContactModification();
