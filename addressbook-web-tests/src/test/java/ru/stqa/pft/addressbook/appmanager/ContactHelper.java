@@ -80,7 +80,7 @@ public class ContactHelper extends HelperBase {
     selectContact(index);
     deleteSelectedContact();
     closeDialogBox();
-    returnToHomePage();
+    //returnToHomePage();
   }
 
   public boolean isThereAContact() {
@@ -98,8 +98,7 @@ public class ContactHelper extends HelperBase {
       List<WebElement> elementsTd = elementTr.findElements(By.xpath("td"));
       String lastName = elementsTd.get(1).getText();
       String firstName = elementsTd.get(2).getText();
-      ContactData contact = new ContactData(firstName, lastName, null, null, null, null);
-      contacts.add(contact);
+      contacts.add(new ContactData().withFirstName(firstName).withLastName(lastName));
     }
     return contacts;
   }
